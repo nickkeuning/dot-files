@@ -23,6 +23,9 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
+# isolate tab histories
+unsetopt share_history
+
 # fzf setup
 bindkey "^A" fzf-cd-widget
 export FZF_BASE="/usr/local/bin/fzf"
@@ -47,11 +50,11 @@ eval $(thefuck --alias)
 
 # nodenv
 eval "$(nodenv init -)"
-# export NODE_PATH=/Users/nicholaskeuning/.nodenv/versions/
 export NODE_PATH=$(npm root -g)
 
 # aliases
 alias be="bundle exec"
+alias ber="bundle exec rake"
 alias se="source environment"
 alias ast="open -a /Applications/Android\ Studio.app"
 alias l="ls -1"
@@ -64,6 +67,12 @@ p(){
 
 pu() {
   open "http://punchit.atomicobject.com/login.php?employee=240"
+}
+
+# obvi
+why() {
+  osascript -e "set Volume 3"
+  open "https://www.youtube.com/watch?v=shbxUe-S2V8"
 }
 
 # transform a markdown file into a pdf with a table of contents
@@ -89,35 +98,36 @@ gnuke() {
   git clean -fd
 }
 
+unalias gg
 # checkout branch with fzf
-gcof() {
+gg() {
   local branches branch
   branches=$(git --no-pager branch -vv) &&
   branch=$(echo "$branches" | fzf +m) &&
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-function emulator { ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@"; ) }
-
-# WIP on auto git rebase / merge
-rebase-via-merge() {
-  echo "gpurge"
-  echo "gco -b merge"
-  echo "git merge origin/develop"
-  echo "FIX CONFLICTS"
-  echo "git merge --continue"
-  echo "gco ORIGINAL-BRANCH"
-  echo "git rebase -X theirs origin/develop"
-  echo "ga . ; git rebase --continue ; # for any tree conflicts"
-  echo "gco merge"
-  echo "git reset ORIGINAL-BRANCH"
-  echo "ga ."
-  echo "commit changes with comment about fixing conflicts"
-  echo "gco ORIGINAL-BRANCH"
-  echo "git merge merge"
-  echo "git branch -d merge"
+# git add all and commit with "wip"
+wip() {
+  ga .
+  gc -m "wip"
 }
 
+# tig
+t() {
+  tig
+}
+
+# tig all branches
+ta() {
+  tig --all
+}
+
+# list nodenv versions
+nv() {
+  nodenv versions
+}
 
 # direnv
 eval "$(direnv hook zsh)"
+
