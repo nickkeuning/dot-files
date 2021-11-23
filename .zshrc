@@ -113,12 +113,6 @@ gg() {
   git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
-# git add all and commit with "wip"
-wip() {
-  ga .
-  gc -m "wip"
-}
-
 # tig
 t() {
   tig
