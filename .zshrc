@@ -59,6 +59,7 @@ alias se="source environment"
 alias ast="open -a /Applications/Android\ Studio.app"
 alias l="ls -1"
 alias gcan="git commit --amend --no-edit"
+alias gfo="git fetch origin -u"
 
 # punchit helpers
 p(){
@@ -73,6 +74,11 @@ pu() {
 why() {
   osascript -e "set Volume 3"
   open "https://www.youtube.com/watch?v=shbxUe-S2V8"
+}
+
+# mute
+mute() {
+  osascript -e "set Volume 0"
 }
 
 # transform a markdown file into a pdf with a table of contents
