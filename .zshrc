@@ -52,12 +52,20 @@ eval $(thefuck --alias)
 eval "$(nodenv init -)"
 export NODE_PATH=$(npm root -g)
 
-# aliases
+# quell aliases
 alias be="bundle exec"
 alias ber="bundle exec rake"
 alias se="source environment"
+alias ast="studio ."
+alias apc="appcode ."
+
+# single column ls
 alias l="ls -1"
+
+# commit staged as amend w/ no edit
 alias gcan="git commit --amend --no-edit"
+
+# fetch and merge any branch from any branch
 alias gfo="git fetch origin -u"
 
 # punchit helpers
