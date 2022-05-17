@@ -13,6 +13,9 @@ source $ZSH/oh-my-zsh.sh
 # add ~/bin/bin to path
 path+=~/bin/bin
 
+# add adb to path
+path+=/Users/nicholaskeuning/Library/Android/sdk/platform-tools/
+
 # prevent duplicates in zsh history
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -80,6 +83,12 @@ pu() {
 # obvi
 why() {
   osascript -e "set Volume 3"
+  open "https://www.youtube.com/watch?v=shbxUe-S2V8"
+}
+
+# OBVI
+WHY() {
+  osascript -e "set Volume 5"
   open "https://www.youtube.com/watch?v=shbxUe-S2V8"
 }
 
