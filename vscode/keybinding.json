@@ -1,0 +1,124 @@
+// Place your key bindings in this file to override the defaults
+[
+  // better renaming behavior in sidebar
+  {
+    "key": "cmd+enter",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "listFocus && !inputFocus"
+  },
+  // easier keep editor open command
+  {
+    "key": "cmd+k cmd+l",
+    "command": "workbench.action.keepEditor"
+  },
+  {
+    "key": "cmd+k enter",
+    "command": "-workbench.action.keepEditor"
+  },
+  // collapse all in sidebar
+  {
+    "key": "alt+cmd+b",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  // reload window
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  // forward in history
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.navigateForward"
+  },
+  // show active file to side
+  {
+    "key": "shift+cmd+e",
+    "command": "workbench.files.action.showActiveFileInExplorer"
+  },
+  // jump to other editor focus
+  {
+    "key": "cmd+k cmd+k",
+    "command": "workbench.action.navigateEditorGroups"
+  },
+  // visual studio style comments
+  {
+    "key": "ctrl+k ctrl+c",
+    "command": "editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+u",
+    "command": "editor.action.removeCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // vim like editor switching
+  // Navigate Splits
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.previousEditorInGroup"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.nextEditorInGroup"
+  },
+  // vim like up / down in command
+  // better splitting
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  // better save all
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "-workbench.action.files.saveLocalFile",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "shift+cmd+s",
+    "command": "workbench.action.files.saveAll"
+  },
+  {
+    "key": "ctrl+k ctrl+s",
+    "command": "git.stageSelectedRanges",
+    "when": "inDiffEditor"
+  },
+  // move editors left / right
+  {
+    "key": "cmd+k l",
+    "command": "workbench.action.moveEditorToRightGroup"
+  },
+  {
+    "key": "cmd+k h",
+    "command": "workbench.action.moveEditorToLeftGroup"
+  }
+]
